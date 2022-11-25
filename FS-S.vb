@@ -1,9 +1,15 @@
 Type Sapata
+    Rem Dimensão em X em metros
     A               As Double
+    Rem Dimensão em Y em metros
     B               As Double
+    Rem Altura em metros
     H               As Double
+    Rem Zona de pressão (1 a 4)
     Zona            As Integer
+    Rem Tensão atuante em MPa
     qmax            As Double
+    Rem Excentricidades em metros
     ex              As Double
     ey              As Double
 End Type
@@ -195,7 +201,7 @@ Function dimensionar_sapata_associada(ByRef P1 As Pilar, ByRef P2 As Pilar, sigm
     
 End Function
 
-Rem K é a excentricidade do pilar na sapata de divisa
+    Rem K é a excentricidade do pilar na sapata de divisa (distância entre o centroide do pilar e o centroide da sapata)
 Function dimensionar_sapata_divisa(K As Double, ByRef P1_divisa As Pilar, ByRef P2 As Pilar, sigma_adm As Double)
     Dim X_rel#, Y_rel#, U#
     Dim theta       As Double
