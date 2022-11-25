@@ -32,6 +32,7 @@ End Type
 Rem proporçao -> verdadeiro para usar proporção da dimensão com 'fator' (fator = A / B) e falso para usar a equivalencia com os pilares (A - PX) = (B - PY)
 Rem sigma_adm é a tensão admissível do solo em MPa
 Rem A funcao retorna a tensão atuante com as dimensões de sapata definidas no objeto do tipo Pilar
+
 Function dimensionar_sapata_isolada(sigma_adm As Double, ByRef pi As Pilar, proporcao As Boolean, fator As Double) As Double
     Dim A#, B#, ex#, ey#, sigma_a#, area#
     Dim com_exc     As Boolean
@@ -155,6 +156,7 @@ Function dimensionar_sapata_isolada(sigma_adm As Double, ByRef pi As Pilar, prop
 End Function
 
 Rem sigma_adm em MPa
+
 Function dimensionar_sapata_associada(ByRef P1 As Pilar, ByRef P2 As Pilar, sigma_adm As Double) As Double
     Dim X_rel       As Double
     Dim Y_rel       As Double
@@ -201,7 +203,8 @@ Function dimensionar_sapata_associada(ByRef P1 As Pilar, ByRef P2 As Pilar, sigm
     
 End Function
 
-    Rem K é a excentricidade do pilar na sapata de divisa (distância entre o centroide do pilar e o centroide da sapata)
+Rem K é a excentricidade do pilar na sapata de divisa (distância entre o centroide do pilar e o centroide da sapata)
+
 Function dimensionar_sapata_divisa(K As Double, ByRef P1_divisa As Pilar, ByRef P2 As Pilar, sigma_adm As Double)
     Dim X_rel#, Y_rel#, U#
     Dim theta       As Double
